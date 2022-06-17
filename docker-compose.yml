@@ -1,0 +1,40 @@
+version: "3.3"
+services:
+  #service 1: definition of mysql database
+  mysqldb-service:
+    #it is just a name, which will be used only in this file.
+    container_name: mysqldb
+    #name of the container created from docker image
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    #docker container port with your os port
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    restart: always
+
+  #service 2: definition of spring boot application
+  upload-app:
+    #it is just a name, which will be used only in this file.
+    container_name: upload-app
+    #name of the container created from docker image
+    image: upload-app
+    #docker file path (. means root directory)
+    build:
+      context: .
+    #docker container port with your os port
+    ports:
+      - "8080:8080"
+    # define dependencies of this app
+    depends_on:
+      #dependency name (which is defined with this name 'mysqldb-service' in this file earlier)
+      - mysqldb-service
+    #    links:
+    #     - mysqldb-service
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/jetdevsdemo?useSSL=false&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root

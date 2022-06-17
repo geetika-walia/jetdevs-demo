@@ -50,3 +50,5 @@ NOTE:
  java -jar .\target\jetdevs-testtask-1.0-SNAPSHOT.jar com/jetdevs/JetDevsTaskApplication
 
 ```
+
+- Once Started: Go to browser and run http://localhost:8080/swagger-ui/index.html.

@@ -1,5 +1,5 @@
-# jetdevs-demo
-Jet Devs Spring Boot Demo
+# springboot-upload-demo
+Spring Boot Demo for file upload
 
 ### Requirements – For Java Developers
 #### Tech Stack

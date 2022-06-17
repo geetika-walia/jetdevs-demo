@@ -44,9 +44,9 @@ NOTE:
 
 2. Jar File
 ```shell
-    Open Terminal
-    cd <app-source-foler-path>
-    mvn clean compile package
-    java -jar .\target\jetdevs-testtask-1.0-SNAPSHOT.jar com/jetdevs/JetDevsTaskApplication
+ Open Terminal
+ cd <app-source-foler-path>
+ mvn clean compile package
+ java -jar .\target\jetdevs-testtask-1.0-SNAPSHOT.jar com/jetdevs/JetDevsTaskApplication
 
 ```
